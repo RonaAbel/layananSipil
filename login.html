@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login</title>
-<br> 
-<main> 
-    <form action="beranda.html" method="post">
-        <center>
-        <table> 
-            <tr> 
-                <th colspan="2"> 
-                    <h3>LOGIN</h3> 
-                </th> 
-            </tr> 
-            <tr> 
-                <td> 
-                    <label 	for="username">Username</label> 
-                </td> 
-                <td> 
-                    <input type="text" id="username" name="username" placeholder="Username"/>
-                </td> 
-            </tr> 
-            <tr> 
-                <td>                         
-                    <label for="password">Password</label> 
-                </td> 
-                <td> 
-                    <input 	type="password" id="password" name="password" placeholder="Password"/> 
-                </td> 
-            </tr> 
-</table>
-</form>
-<br>
-<button type="submit">Login</button>
-Belum daftar? <a href="registrasi.html">registrasi</a>
-</center>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/login.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <form action="">
+        <h1><u>LOGIN</u></h1>
+        <div class="input-box">
+          <input
+            type="text"
+            placeholder="Username"
+            required
+          />
+          <i class="bx bxs-user"></i>
+        </div>
+        <div class="input-box">
+          <input type="text" placeholder="Password" required />
+          <i class="bx bxs-lock-alt"></i>
+        </div>
+
+        <div class="remember-forgot">
+          <a href="forgot.html">Lupa Kata Sandi ?</a>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <div class="register-link">
+          <p>Pengguna Baru? <a href="registrasi.html"> Register</a></p>
+        </div>
+      </form>
+    </div>
+    <header class="header">
+      <a href="#" class="logo">Logo</a>
+      <nav class="navbar">
+        <a href="home.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+  </body>
 </html>
+

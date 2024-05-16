@@ -1,0 +1,93 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    padding-top: 50px;
+}
+
+.sidebar .logo-details {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.sidebar .logo-details i {
+    font-size: 28px;
+    margin-right: 5px;
+}
+
+.sidebar .logo-details .logo_name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.sidebar ul {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.sidebar ul li {
+    list-style: none;
+    padding: 15px 20px;
+    transition: all 0.4s ease;
+}
+
+.sidebar ul li:hover {
+    background-color: #555;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.home-section {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.home-section nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.home-section nav .sidebar-button {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.home-section nav .admin_name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.home-section .home-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.home-section .home-content h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}

@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrasi</title>
-</head>  
-<main> 
-    <form action="login.html" method="post"> 
-        <table align="center"> 
-            <tr> 
-                <th colspan="2"> 
-                    <h3>REGISTRASI</h3> 
-                </th> 
-            </tr> 
-            <tr> 
-                <td> 
-                    <label 	for="email">Email</label> 
-                </td> 
-                <td> 
-                    <input type="text" id="email" name="email" placeholder="Email"/>
-                </td> 
-            </tr> 
-            <tr> 
-                <td>                         
-                    <label for="username">Username</label> 
-                </td> 
-                <td> 
-                    <input 	type="username" id="username" name="username" placeholder="Username"/> 
-                </td> 
-            </tr>
-            <tr> 
-                <td>                         
-                    <label for="password">Password</label> 
-                </td> 
-                <td> 
-                    <input 	type="password" id="password" name="password" placeholder="Password"/> 
-                </td> 
-            </tr> 
-            <tr> 
-                <td colspan="2" align="right"> 
-                    <input 	type="submit" value="Submit"/> 
-                    <button type="delete" value="Hapus">Hapus</button>
-                </td>
-            </tr> 
-</table>
-</form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/login.css" />
+    <title>Register</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <form action="">
+        <h1><u>REGISTER</u></h1>
+        <div class="input-box">
+          <input
+            type="text"
+            placeholder="Email"
+            required
+          />
+          <i class='bx bxs-envelope'></i>
+        </div>
+        <div class="input-box">
+          <input type="text" placeholder="Username" required />
+          <i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
+            <input type="text" placeholder="Password" required />
+            <i class='bx bxs-lock-alt' ></i>
+          </div>
+
+        <button type="submit" class="btn">Submit</button>
+        <div class="register-link">
+        </div>
+        <button type="submit" class="btn">Hapus</button>
+        <div class="register-link">
+        </div>
+      </form>
+    </div>
+    <header class="header">
+      <a href="#" class="logo">Logo</a>
+      <nav class="navbar">
+        <a href="home.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+  </body>
 </html>

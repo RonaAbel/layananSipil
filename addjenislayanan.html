@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="../assets/icon.png" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <!-- Boxicons CDN Link -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Sipil</title>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo-details">
+        <i class="bx bx-category"></i>
+        <span class="logo_name">Admin Sipil</span>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="admin.html" class="active">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="jenislayanan.html">
+            <i class="bx bx-box"></i>
+            <span class="links_name">Jenis Layanan</span>
+          </a>
+        </li>
+        <li>
+          <a href="pembayaran.html">
+            <i class="bx bx-list-ul"></i>
+            <span class="links_name">Pembayaran</span>
+          </a>
+        </li>
+        <li>
+          <a href="home.html">
+            <i class="bx bx-log-out"></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <section class="home-section">
+      <nav>
+        <div class="sidebar-button">
+          <i class="bx bx-menu sidebarBtn"></i>
+        </div>
+        <div class="profile-details">
+          <span class="admin_name">Admin Sipil</span>
+        </div>
+      </nav>
+      <div class="home-content">
+        <h3>Input Layanan</h3>
+        <div class="form-login">
+          <form action="">
+            <label for="Jenis Layanan">Jenis Layanan</label>
+            <input
+              class="input"
+              type="text"
+              name="kategori"
+              id="kategori"
+              placeholder="kategori"
+            />
+            <br>
+            <label for="categories">pembayaran</label>
+            <input
+              class="input"
+              type="text"
+              name="pembayaran"
+              id="pembayaran"
+              placeholder="pembayaran"
+            />
+            <br>
+            <button type="submit" class="btn btn-simpan" name="simpan">Simpan</button>
+            <button type="submit" class="btn btn-hapus" name="hapus">Hapus</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

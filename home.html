@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Sipil</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <style>
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Sesuaikan dengan lebar maksimum carousel */
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            flex: 0 0 auto;
+            width: 100%; /* Sesuaikan dengan lebar gambar */
+        }
+    </style>
+</head>
+<body bgcolor="#E3E2DF"> 
+    <header align="center">  
+        <nav> 
+            <div class="logo"> 
+                <img width="50%" src="assets/logo.png" alt="logo.png"> 
+                <h1>Pelayanan Sipil</h1> 
+            </div>  
+            <a href="login.html">Login</a> 
+            <a href="admin.html">Admin</a> 
+            <a href="registrasi.html">Registrasi</a> 
+        </nav>      
+    </header>
+
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <img class="carousel-item" src="/assets/akta.png" alt="Image 1" width="500" height="500">
+            <img class="carousel-item" src="/assets/kk.jpg" alt="Image 2" width="500" height="500">
+            <img class="carousel-item" src="/assets/ktp.png" alt="Image 3" width="500" height="500">
+            <!-- Tambahkan gambar-gambar tambahan di sini -->
+        </div>
+    </div>
+    <footer> 
+        <h4 align="center">&copy; Selamat Datang di Pelayanan DUKCAPIL</h4>  
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const carouselSlide = document.querySelector('.carousel-slide');
+            const carouselImages = document.querySelectorAll('.carousel-item');
+
+            // Inisialisasi variabel
+            let counter = 0;
+            const size = carouselImages[0].clientWidth;
+
+            // Atur lebar slide agar sesuai dengan jumlah gambar
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+            // Fungsi untuk menggeser slide ke kanan
+            function nextSlide() {
+                if (counter >= carouselImages.length - 1) return;
+                carouselSlide.style.transition = 'transform 0.5s ease-in-out';
+                counter++;
+                carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+            }
+
+            // Fungsi untuk menggeser slide ke kiri
+            function prevSlide() {
+                if (counter <= 0) return;
+                carouselSlide.style.transition = 'transform 0.5s ease-in-out';
+                counter--;
+                carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+            }
+
+            // Event listener untuk tombol next dan prev
+            document.querySelector('.carousel-container').addEventListener('mouseover', function() {
+                document.querySelector('.carousel-container').style.cursor = 'pointer';
+            });
+            document.querySelector('.carousel-container').addEventListener('mouseout', function() {
+                document.querySelector('.carousel-container').style.cursor = 'default';
+            });
+            document.querySelector('.carousel-container').addEventListener('click', nextSlide);
+            document.querySelector('.carousel-container').addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                prevSlide();
+            });
+
+            // Autoplay
+            setInterval(nextSlide, 3000); // Ganti gambar setiap 3 detik
+        });
+    </script>
+</body>
+</html>
