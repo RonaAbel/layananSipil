@@ -49,51 +49,5 @@
     <footer> 
         <h4 align="center">&copy; Selamat Datang di Pelayanan DUKCAPIL</h4>  
     </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const carouselSlide = document.querySelector('.carousel-slide');
-            const carouselImages = document.querySelectorAll('.carousel-item');
-
-            // Inisialisasi variabel
-            let counter = 0;
-            const size = carouselImages[0].clientWidth;
-
-            // Atur lebar slide agar sesuai dengan jumlah gambar
-            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-
-            // Fungsi untuk menggeser slide ke kanan
-            function nextSlide() {
-                if (counter >= carouselImages.length - 1) return;
-                carouselSlide.style.transition = 'transform 0.5s ease-in-out';
-                counter++;
-                carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-            }
-
-            // Fungsi untuk menggeser slide ke kiri
-            function prevSlide() {
-                if (counter <= 0) return;
-                carouselSlide.style.transition = 'transform 0.5s ease-in-out';
-                counter--;
-                carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
-            }
-
-            // Event listener untuk tombol next dan prev
-            document.querySelector('.carousel-container').addEventListener('mouseover', function() {
-                document.querySelector('.carousel-container').style.cursor = 'pointer';
-            });
-            document.querySelector('.carousel-container').addEventListener('mouseout', function() {
-                document.querySelector('.carousel-container').style.cursor = 'default';
-            });
-            document.querySelector('.carousel-container').addEventListener('click', nextSlide);
-            document.querySelector('.carousel-container').addEventListener('contextmenu', function(e) {
-                e.preventDefault();
-                prevSlide();
-            });
-
-            // Autoplay
-            setInterval(nextSlide, 3000); // Ganti gambar setiap 3 detik
-        });
-    </script>
 </body>
 </html>
