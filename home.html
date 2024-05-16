@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layanan Sipil</title>
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="css/home.css">
     <style>
         .carousel-container {
             position: relative;
@@ -23,6 +23,81 @@
             flex: 0 0 auto;
             width: 100%; /* Sesuaikan dengan lebar gambar */
         }
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input,
+textarea,
+select,
+button {
+    width: 600px;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button [submit]{
+    width: 100px;
+}
+button {
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    left: 50%;
+}
+
+button:hover {
+    background-color: #aaaaaa;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
     </style>
 </head>
 <body bgcolor="#E3E2DF"> 
@@ -40,10 +115,46 @@
 
     <div class="carousel-container">
         <div class="carousel-slide">
-            <img class="carousel-item" src="/assets/akta.png" alt="Image 1" width="500" height="500">
-            <img class="carousel-item" src="/assets/kk.jpg" alt="Image 2" width="500" height="500">
-            <img class="carousel-item" src="/assets/ktp.png" alt="Image 3" width="500" height="500">
+            <img class="carousel-item" src="assets/akta.png" alt="Image 1" width="500" height="500">
+            <img class="carousel-item" src="assets/kk.jpg" alt="Image 2" width="500" height="500">
+            <img class="carousel-item" src="assets/ktp.png" alt="Image 3" width="500" height="500">
             <!-- Tambahkan gambar-gambar tambahan di sini -->
+        </div>
+    </div>
+    <div class="container">
+        <h2>Pembuatan KTP</h2>
+        <button id="openFormBtn">Daftar KTP</button>
+        <div id="formPopup" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" id="closeFormBtn">&times;</span>
+                <form id="ktpForm">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap:</label>
+                        <input type="text" id="nama" name="nama" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggalLahir">Tanggal Lahir:</label>
+                        <input type="date" id="tanggalLahir" name="tanggalLahir" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="alamat">Alamat:</label>
+                        <textarea id="alamat" name="alamat" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="jenisKelamin">Jenis Kelamin:</label>
+                        <select id="jenisKelamin" name="jenisKelamin" required>
+                            <option value="">Pilih Jenis Kelamin</option>
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="kewarganegaraan">Kewarganegaraan:</label>
+                        <input type="text" id="kewarganegaraan" name="kewarganegaraan" required>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
     <footer> 
@@ -94,6 +205,53 @@
             // Autoplay
             setInterval(nextSlide, 3000); // Ganti gambar setiap 3 detik
         });
+
+        // Menampilkan popup form saat tombol "Buka Formulir KTP" diklik
+document.getElementById('openFormBtn').addEventListener('click', function() {
+    document.getElementById('formPopup').style.display = 'block';
+});
+
+// Menyembunyikan popup form saat tombol "Close" diklik
+document.getElementById('closeFormBtn').addEventListener('click', function() {
+    document.getElementById('formPopup').style.display = 'none';
+});
+
+// Mengelola form submission
+document.getElementById('ktpForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Mencegah form disubmit
+
+    // Mengambil nilai dari input form
+    const nama = document.getElementById('nama').value;
+    const tanggalLahir = document.getElementById('tanggalLahir').value;
+    const alamat = document.getElementById('alamat').value;
+    const jenisKelamin = document.getElementById('jenisKelamin').value;
+    const kewarganegaraan = document.getElementById('kewarganegaraan').value;
+
+    // Simpan data ke local storage
+    const ktpData = {
+        nama,
+        tanggalLahir,
+        alamat,
+        jenisKelamin,
+        kewarganegaraan
+    };
+
+    localStorage.setItem('ktpData', JSON.stringify(ktpData));
+
+    // Menampilkan hasil input
+    const output = `
+        <p>Nama Lengkap: ${nama}</p>
+        <p>Tanggal Lahir: ${tanggalLahir}</p>
+        <p>Alamat: ${alamat}</p>
+        <p>Jenis Kelamin: ${jenisKelamin}</p>
+        <p>Kewarganegaraan: ${kewarganegaraan}</p>
+    `;
+
+    document.getElementById('output').innerHTML = output;
+
+    // Menyembunyikan popup form setelah disubmit
+    document.getElementById('formPopup').style.display = 'none';
+});
     </script>
 </body>
 </html>
